@@ -3,6 +3,7 @@ from typing import TypedDict, Any, Iterable, TypeVar, Sequence
 
 class NimPyException(Exception): ...
 
+
 """
 ################################################################################################################
 Memory
@@ -230,6 +231,7 @@ class _Vector3(TypedDict):
     x: float
     y: float
     z: float
+
 def vec2(x: float = 0, y: float = 0) -> _Vector2: ...
 def vec2_add(v1: _Vector2, v2: _Vector2) -> _Vector2: ...
 def vec2_add_value(v: _Vector2, value: float) -> _Vector2: ...
