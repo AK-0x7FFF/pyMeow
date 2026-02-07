@@ -2,13 +2,11 @@ import subprocess
 from pathlib import Path
 
 from setuptools import setup, find_packages
-from setuptools.command.build_py import build_py
+from setuptools.command.build import build
 
 
 
-
-
-class BuildPy(build_py):
+class BuildPy(build):
    @staticmethod
    def build() -> bool:
       script = Path("build.cmd")
@@ -57,11 +55,14 @@ setup(
    url='https://github.com/qb-0/PyMeow',
    license='MIT',
    cmdclass={
-      'build_py': BuildPy
+      'build': BuildPy
    },
+   packages=find_packages(where="py"),
    package_dir={
       "": "py"
    },
-   packages=find_packages(where="py"),
+   package_data={
+        'pyMeow': ['*.pyd'],
+    },
    include_package_data=True,
 )
