@@ -32,10 +32,10 @@ if errorlevel 1 (
 )
 
 echo [2/2] Compiling pyMeow...
-echo nim c pyMeow
+echo nim c -o:./py/pyMeow/pyMeow.pyd pyMeow.nim
 echo.
 
-nim c pyMeow
+nim c -o:./py/pyMeow/pyMeow.pyd pyMeow.nim
 
 if errorlevel 1 (
     echo.
